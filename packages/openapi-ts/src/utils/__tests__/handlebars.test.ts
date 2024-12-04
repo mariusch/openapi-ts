@@ -21,6 +21,7 @@ describe('registerHandlebarHelpers', () => {
       input: {
         path: '',
       },
+      logs: {},
       output: {
         format: 'prettier',
         path: '',
@@ -71,6 +72,7 @@ describe('registerHandlebarTemplates', () => {
       input: {
         path: '',
       },
+      logs: {},
       output: {
         format: 'prettier',
         path: '',

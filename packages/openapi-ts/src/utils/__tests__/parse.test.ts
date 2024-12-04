@@ -16,6 +16,7 @@ describe('operationNameFn', () => {
     input: {
       path: '',
     },
+    logs: {},
     output: {
       path: '',
     },

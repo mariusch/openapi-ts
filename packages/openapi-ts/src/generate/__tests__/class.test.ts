@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import fs from 'node:fs';
 
 import { describe, expect, it, vi } from 'vitest';
 
@@ -22,6 +22,7 @@ describe('generateLegacyClientClass', () => {
       input: {
         path: '',
       },
+      logs: {},
       name: 'AppClient',
       output: {
         path: '',
@@ -58,6 +59,6 @@ describe('generateLegacyClientClass', () => {
 
     await generateLegacyClientClass(openApi, './dist', client, mockTemplates);
 
-    expect(writeFileSync).toHaveBeenCalled();
+    expect(fs.writeFileSync).toHaveBeenCalled();
   });
 });

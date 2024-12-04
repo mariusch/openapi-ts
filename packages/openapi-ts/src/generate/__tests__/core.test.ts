@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -36,6 +36,7 @@ describe('generateLegacyCore', () => {
       input: {
         path: '',
       },
+      logs: {},
       name: 'AppClient',
       output: {
         path: '',
@@ -64,27 +65,27 @@ describe('generateLegacyCore', () => {
 
     await generateLegacyCore('/', client, templates);
 
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       path.resolve('/', '/OpenAPI.ts'),
       'settings',
     );
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       path.resolve('/', '/ApiError.ts'),
       'apiError',
     );
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       path.resolve('/', '/ApiRequestOptions.ts'),
       'apiRequestOptions',
     );
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       path.resolve('/', '/ApiResult.ts'),
       'apiResult',
     );
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       path.resolve('/', '/CancelablePromise.ts'),
       'cancelablePromise',
     );
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       path.resolve('/', '/request.ts'),
       'request',
     );
@@ -111,6 +112,7 @@ describe('generateLegacyCore', () => {
       input: {
         path: '',
       },
+      logs: {},
       name: 'AppClient',
       output: {
         path: '',
@@ -169,6 +171,7 @@ describe('generateLegacyCore', () => {
       input: {
         path: '',
       },
+      logs: {},
       name: 'AppClient',
       output: {
         path: '',

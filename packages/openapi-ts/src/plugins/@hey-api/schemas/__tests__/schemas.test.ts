@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import fs from 'node:fs';
 
 import { describe, expect, it, vi } from 'vitest';
 
@@ -24,6 +24,7 @@ describe('generateLegacySchemas', () => {
       input: {
         path: '',
       },
+      logs: {},
       name: 'AppClient',
       output: {
         path: '',
@@ -74,7 +75,7 @@ describe('generateLegacySchemas', () => {
 
     files.schemas.write();
 
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       expect.stringContaining('schemas.gen.ts'),
       expect.anything(),
     );
@@ -95,6 +96,7 @@ describe('generateLegacySchemas', () => {
       input: {
         path: '',
       },
+      logs: {},
       name: 'AppClient',
       output: {
         path: '',
@@ -148,7 +150,7 @@ describe('generateLegacySchemas', () => {
 
     files.schemas.write();
 
-    expect(writeFileSync).toHaveBeenCalledWith(
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
       expect.stringContaining('schemas.gen.ts'),
       expect.anything(),
     );

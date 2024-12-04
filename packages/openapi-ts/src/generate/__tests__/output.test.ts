@@ -1,4 +1,4 @@
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import fs from 'node:fs';
 
 import { describe, expect, it, vi } from 'vitest';
 
@@ -23,6 +23,7 @@ describe('generateLegacyOutput', () => {
       input: {
         path: '',
       },
+      logs: {},
       output: {
         format: 'prettier',
         path: './dist',
@@ -63,8 +64,8 @@ describe('generateLegacyOutput', () => {
       templates: mockTemplates,
     });
 
-    expect(rmSync).toHaveBeenCalled();
-    expect(mkdirSync).toHaveBeenCalled();
-    expect(writeFileSync).toHaveBeenCalled();
+    expect(fs.rmSync).toHaveBeenCalled();
+    expect(fs.mkdirSync).toHaveBeenCalled();
+    expect(fs.writeFileSync).toHaveBeenCalled();
   });
 });
