@@ -1,5 +1,13 @@
 # @hey-api/openapi-ts
 
+## 0.58.1
+
+### Patch Changes
+
+- [#1382](https://github.com/hey-api/openapi-ts/pull/1382) [`3580c1e`](https://github.com/hey-api/openapi-ts/commit/3580c1eec4640d235a1e0f78bf76581e532aaf8b) Thanks [@mrlubos](https://github.com/mrlubos)! - fix: correctly resolve required properties in nested allOf composition
+
+- [#1382](https://github.com/hey-api/openapi-ts/pull/1382) [`3580c1e`](https://github.com/hey-api/openapi-ts/commit/3580c1eec4640d235a1e0f78bf76581e532aaf8b) Thanks [@mrlubos](https://github.com/mrlubos)! - fix: transformers handle allOf composition in experimental parser
+
 ## 0.58.0
 
 ### Minor Changes
